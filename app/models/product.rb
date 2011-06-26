@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  default_scope :order => 'title'
   validates :title, :description, :image_url, :presence => true
   validates_presence_of :price
   validates_numericality_of :price, :greater_than_or_equal_to  => 0.01
